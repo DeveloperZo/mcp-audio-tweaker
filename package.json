@@ -1,0 +1,146 @@
+{
+  "name": "mcp-audio-tweaker",
+  "version": "0.1.0",
+  "description": "MCP server for batch audio processing and optimization using FFmpeg with parameter-based interface for sample rate conversion, bitrate adjustment, and audio effects",
+  "main": "build/index.js",
+  "type": "module",
+  "bin": {
+    "mcp-audio-tweaker": "build/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "start": "node build/index.js",
+    "dev": "npm run build:watch & node --watch build/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ffmpeg": "npm run test -- --testNamePattern=\"ffmpeg\"",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "prepublishOnly": "npm run build && npm run test",
+    "standalone": "node build/index.js --standalone",
+    "validate-schemas": "ajv validate -s schemas/*.json",
+    "check-ffmpeg": "node build/utils/check-ffmpeg.js",
+    "presets:list": "node build/presets/list-presets.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol", 
+    "audio",
+    "ffmpeg",
+    "batch-processing",
+    "audio-processing",
+    "game-audio",
+    "claude-desktop",
+    "sound-optimization",
+    "audio-conversion",
+    "elevenLabs",
+    "audio-effects"
+  ],
+  "author": "DeveloperZo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DeveloperZo/mcp-audio-tweaker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DeveloperZo/mcp-audio-tweaker/issues"
+  },
+  "homepage": "https://github.com/DeveloperZo/mcp-audio-tweaker#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "zod": "^3.23.8",
+    "commander": "^11.1.0",
+    "glob": "^10.3.10",
+    "p-queue": "^7.4.1",
+    "winston": "^3.11.0",
+    "fs-extra": "^11.2.0",
+    "which": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/jest": "^29.5.8",
+    "@types/fluent-ffmpeg": "^2.1.24",
+    "@types/fs-extra": "^11.0.4",
+    "@types/which": "^3.0.3",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.2",
+    "eslint": "^8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "prettier": "^3.1.0",
+    "ajv-cli": "^5.0.0",
+    "rimraf": "^5.0.5"
+  },
+  "peerDependencies": {
+    "ffmpeg": "*"
+  },
+  "peerDependenciesMeta": {
+    "ffmpeg": {
+      "optional": false
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "files": [
+    "build/**/*",
+    "schemas/**/*",
+    "presets/**/*",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.test.ts",
+      "**/?(*.)+(spec|test).ts"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/**/*.d.ts",
+      "!src/**/*.test.ts"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/setup.ts"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/no-explicit-any": "warn",
+      "prefer-const": "error"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 80,
+    "tabWidth": 2
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/DeveloperZo"
+  }
+}

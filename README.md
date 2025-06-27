@@ -334,18 +334,13 @@ npm run test:ffmpeg
 This README provides a quick overview. For comprehensive documentation:
 
 ### 🚀 Getting Started
-- **[Installation Guide](../docs/installation-guide.md)**: Complete setup instructions
-- **[Quick Start Tutorial](../docs/tutorials/quick-start.md)**: Get running in 15 minutes
-- **[API Reference](../docs/api-reference.md)**: Complete API documentation
-
-### 🎮 Workflows & Tutorials
-- **[Game Audio Workflow](../docs/tutorials/game-audio-workflow.md)**: Complete game development pipeline
-- **[ElevenLabs Integration](../docs/tutorials/elevenlabs-integration.md)**: AI voice processing workflow
-- **[Batch Processing Guide](../docs/tutorials/batch-processing.md)**: Efficient mass audio processing
+- **[Installation Guide](/docs/installation-guide.md)**: Complete setup instructions
+- **[Quick Start Tutorial](/docs/quick-start.md)**: Get running in 15 minutes
+- **[API Reference](/docs/api-reference.md)**: Complete API documentation
 
 ### 🔧 Support & Troubleshooting
-- **[Troubleshooting Guide](../docs/troubleshooting.md)**: Common issues and solutions
-- **[Contributing Guide](../docs/contributing.md)**: How to contribute to the project
+- **[Troubleshooting Guide](/docs/troubleshooting.md)**: Common issues and solutions
+- **[Contributing Guide](/docs/contributing.md)**: How to contribute to the project
 
 ## License
 
